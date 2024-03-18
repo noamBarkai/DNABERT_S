@@ -12,3 +12,4 @@ textaugment
 scipy
 gdown
 wandb
+textblob==0.17.1

@@ -16,8 +16,8 @@ from dataloader.dataloader import pair_loader_csv
 from utils.utils import set_global_random_seed, setup_path
 from utils.optimizer import get_optimizer
 from models.dnabert_s import DNABert_S
-# enable logging to W&B
-import wandb
+
+import wandb # enables logging to W&B
 
 def run(args):
     args.resPath = setup_path(args)
@@ -40,11 +40,9 @@ def run(args):
     model = nn.DataParallel(model)
     model.to(device)
     
-    # start a new wandb run to track this script
+    # start a new wandb run to track this run
     wandb.init(
-        # set the wandb project where this run will be logged
-        project="dna_bert_s",
-        # track hyperparameters and run metadata
+        project="dna_bert_s", # project where this run will be logged
         config=args
     )
 

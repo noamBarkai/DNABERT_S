@@ -9,8 +9,8 @@ import torch.nn as nn
 from textaugment import EDA
 from tqdm import tqdm
 from utils.contrastive_utils import HardConLoss, iMIXConLoss
-# enable logging to W&B
-import wandb
+
+import wandb # enables logging to W&B
 
 class Trainer(nn.Module):
     def __init__(self, model, tokenizer, optimizer, train_loader, val_loader, args):
